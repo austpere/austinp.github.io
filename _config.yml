@@ -14,17 +14,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Austin Perez
-email: austin@example.com
+email: austin@austinp.com
 description: > # this means to ignore newlines until "baseurl:"
-  What is up <3
+  test...
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://austinp.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  austin4perezident
 
 # Build settings
-markdown: kramdown
-theme: minima
+sass:
+  # style: compressed
+  sourcemap: inline
+  # debug_info: true
+  line_numbers: true
+  line_comments: true
 plugins:
   - jekyll-feed
 

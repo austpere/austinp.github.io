@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Austin Perez">
+  <title>Austin Perez</title>
+  {% include _css.html %}
+
+</head>
+
+<body class="page-1" data-spy="scroll" data-target=".navbar-collapse" data-offset="51">
+  <div class="body">
+    <a class="anchor" id="top"></a>
+    <div class="jumbo-home">
+      <nav class="navbar navbar-default container-fluid" data-class="" role="navigation">
+        <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		    <span class="sr-only">Toggle navigation</span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand animate"
+		    {% if page.url == '/index.html' %} href="#top" {% else %} href="/" {% endif %}>
+		    Austin Perez
+		  </a>
+		</div>
+      </nav>
+<!-- content must close .jumbo-home div -->
+      <div class="jumbotron">
+	    <div class="container-fluid text-center">
+	      <h1>Austin Perez</h1>
+	      <p>
+	        Dedicated Full-Stack Software Engineer experienced with all facets of the software development lifecycle including analysis, design, development, verification, deployment and support.
+	      </p>
+	      <p>
+	        View some of my work:
+	      </p>
+	      <p><a href="http://filmhub.com" class="btn btn-default" target="_blank">Filmhub</a> &nbsp; <a href="https://kpinsonstairs.com" class="btn btn-default" target="_blank">K Pinson Stairs</a></p>
+	    </div>
+	  </div>
+	</div>
+
+  </div>
+</div>
+{% include _footer.html %}
+{% include _js.html %}
+
+</body>
+</html>
