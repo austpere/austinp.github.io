@@ -1,8 +1,9 @@
 title: Austin Perez
-email: austin@austinp.com
-url: "http://austinp.com"
-twitter_username: jekyllrb
-github_username:  austin4perezident
+description: Dedicated Full-Stack Software Engineer experienced with all facets of the software development lifecycle including analysis, design, development, verification and support.
+# email: austin@austinp.com
+# url: "http://austinp.com"
+# twitter_username: jekyllrb
+# github_username:  austin4perezident
 
 # Build settings
 sass:
