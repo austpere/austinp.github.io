@@ -1,57 +1,100 @@
 ---
 ---
-// Backgrounds
-$bg-navy: #001f3f;
-$bg-blue: #0074d9;
-$bg-aqua: #7fdbff;
-$bg-teal: #39cccc;
-$bg-olive: #3d9970;
-$bg-green: #2ecc40;
-$bg-lime: #01ff70;
-$bg-yellow: #ffdc00;
-$bg-orange: #ff851b;
-$bg-red: #ff4136;
-$bg-fuchsia: #f012be;
-$bg-purple: #b10dc9;
-$bg-maroon: #85144b;
-$bg-white: #fff;
-$bg-gray: #aaa;
-$bg-silver: #ddd;
-$bg-black: #111;
+$blue: #2b4480;
+$white: #f5f4f0;
+$grey: #7d7d7d;
+$light-blue: #4da8f2;
+$light-green: #79eddc;
+$facebook: #3B5998;
+$linkedin: #0077B5;
+$github: #4078c0;
 
-// colors
-$navy: #001f3f;
-$blue: #0074d9;
-$aqua: #7fdbff;
-$teal: #39cccc;
-$olive: #3d9970;
-$green: #2ecc40;
-$lime: #01ff70;
-$yellow: #ffdc00;
-$orange: #ff851b;
-$red: #ff4136;
-$fuchsia: #f012be;
-$purple: #b10dc9;
-$maroon: #85144b;
-$white: #fff;
-$silver: #ddd;
-$gray: #aaa;
-$black: #111;
-
-$filmhub-blue: #1a237e;
-$filmhub-grey: #525254;
-$filmhub-white: #f8f8f8;
 
 @import 'bootstrap';
 
 body {
-  background-color: $filmhub-white;
-  color: $navy;
-  font-size: 16px;
-  line-height: 1.5em;
-  padding-bottom: 0;
+  background: linear-gradient(to bottom right, $blue, $light-blue);
+  font-family: 'Roboto', sans-serif;
 }
 
-.body {
-  background-color: $white;
+a {
+  text-decoration: none;
+  color: $grey;
+  &:hover {
+    text-decoration: none;
+    color: $grey;
+  }
+  &:active {
+    text-decoration: none;
+    color: $grey;
+  }
+  &:focus {
+    text-decoration: none;
+    color: $grey;
+  }
+  &.facebook {
+    color: $facebook;
+  }
+  &.linkedin {
+    color: $linkedin;
+  }
+  &.github {
+    color: $github;
+  }
 }
+
+.contact {
+  color: $grey;
+  text-transform: uppercase;
+  font-size: 1.1rem;  
+  margin-top: 30px;
+  padding: 5px;
+}
+
+.container div div {
+  background: $white;
+}
+
+.wrap {
+  top: 2.5rem;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+#background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.text-blue {
+  color: $light-blue;
+  font-weight: 300;
+}
+
+.name {
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.tagline {
+  color: $grey;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.summary {
+  padding: 20px 0;
+}
+
+.social {
+  font-size: 1.1rem;  
+  margin-top: 30px;
+  padding: 5px;
+}
+
+

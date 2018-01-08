@@ -10,43 +10,82 @@
 
 </head>
 
-<body class="page-1" data-spy="scroll" data-target=".navbar-collapse" data-offset="51">
-  <div class="body">
-    <a class="anchor" id="top"></a>
-    <div class="jumbo-home">
-      <nav class="navbar navbar-default container-fluid" data-class="" role="navigation">
-        <div class="navbar-header">
-		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		    <span class="sr-only">Toggle navigation</span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		  </button>
-		  <a class="navbar-brand animate"
-		    {% if page.url == '/index.html' %} href="#top" {% else %} href="/" {% endif %}>
-		    Austin Perez
-		  </a>
+<body data-spy="scroll" data-offset="51">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center wrap">
+				<img src="../assets/images/profile_img.jpg" class="img-responsive img-circle center-block" alt="Responsive image">
+				<h1 class="name text-blue">Austin Perez</h1>
+				<span class="tagline">Full-Stack Web Developer</span>
+				<div class="container-fluid">
+					<address>
+						<div class="col-sm-4 contact">
+							<span class="address">
+								<span class="glyphicon glyphicon-map-marker"></span>
+								<span class="locality"> Temecula</span>,
+		            <abbr class="region">CA</abbr>
+		            <span class="postal-code">92592</span>
+							</span>
+						</div>
+						<div class="col-sm-4 contact">
+							<span class="telephone">
+								<span class="glyphicon glyphicon-phone"></span>
+								<span class="text"> +1.424.291.2313</span>
+							</span>
+						</div>
+						<div class="col-sm-4 contact">
+							<a href="mailto:austin@austinp.com">
+								<span class="email">
+									<span class="glyphicon glyphicon-envelope"></span>
+									<span class="text"> austin@austinp.com</span>
+								</span>
+							</a>
+						</div>
+					</address>
+				</div>
+			  <p class="summary">
+			    Dedicated Full-Stack Software Engineer experienced with all facets of the software development lifecycle including analysis, design, development, verification and support.
+			  </p>
+			  <p class="lead">
+			    View my work:
+			  </p>
+			  <p>
+			  	<a href="http://filmhub.com" class="btn btn-default" target="_blank">Filmhub</a> 
+			  	&nbsp;
+			  	<a href="https://kpinsonstairs.com" class="btn btn-default" target="_blank">K Pinson Stairs</a>
+			  </p>
+			  <div class="container-fluid">
+					<div class="col-sm-4 social">
+						<span>
+							<a class="facebook" href="https://www.fb.com/austin4perezident" target="_blank">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+								<span class="text"> fb.com/austin4perezident</span>
+							</a>
+						</span>
+					</div>
+					<div class="col-sm-4 social">
+						<span>
+							<a class="linkedin" href="https://www.linkedin.com/in/austin4perezident/" target="_blank">
+								<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+								<span class="text"> /in/austin4perezident</span>
+							</a>
+						</span>
+					</div>
+					<div class="col-sm-4 social">
+						<span>
+							<a class="github" href="https://github.com/austin4perezident" target="_blank">
+								<i class="fa fa-github" aria-hidden="true"></i>
+								<span class="text"> austin4perezident</span>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
-      </nav>
-<!-- content must close .jumbo-home div -->
-      <div class="jumbotron">
-	    <div class="container-fluid text-center">
-	      <h1>Austin Perez</h1>
-	      <p>
-	        Dedicated Full-Stack Software Engineer experienced with all facets of the software development lifecycle including analysis, design, development, verification, deployment and support.
-	      </p>
-	      <p>
-	        View some of my work:
-	      </p>
-	      <p><a href="http://filmhub.com" class="btn btn-default" target="_blank">Filmhub</a> &nbsp; <a href="https://kpinsonstairs.com" class="btn btn-default" target="_blank">K Pinson Stairs</a></p>
-	    </div>
-	  </div>
+		{% include _footer.html %}
 	</div>
-
-  </div>
-</div>
-{% include _footer.html %}
+<canvas id="background-image"></canvas>
 {% include _js.html %}
-
 </body>
 </html>
