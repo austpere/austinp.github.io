@@ -1,19 +1,19 @@
 @import "variables";
 
 @font-face {
-  font-family: 'icomoon';
-  src:  url('#{$icomoon-font-path}/icomoon.eot?xc1n2d');
-  src:  url('#{$icomoon-font-path}/icomoon.eot?xc1n2d#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/icomoon.ttf?xc1n2d') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?xc1n2d') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?xc1n2d#icomoon') format('svg');
+  font-family: 'austinp';
+  src:  url('#{$icomoon-font-path}/austinp.eot?eoe6d');
+  src:  url('#{$icomoon-font-path}/austinp.eot?eoe6d#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/austinp.ttf?eoe6d') format('truetype'),
+    url('#{$icomoon-font-path}/austinp.woff?eoe6d') format('woff'),
+    url('#{$icomoon-font-path}/austinp.svg?eoe6d#austinp') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'austinp' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -27,7 +27,7 @@
 }
 
 .icon-filmhub {
-  font-size: 1.3em;
+  font-size: 1.5em;
   &:before {
     content: $icon-filmhub;
   }
@@ -38,4 +38,9 @@
     content: $icon-kpinsonstairs;
   }
 }
-
+.icon-nfx {
+  font-size: 2.5em;
+  &:before {
+    content: $icon-nfx;
+  }
+}
