@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'austinp';
-  src:  url('#{$icomoon-font-path}/austinp.eot?eoe6d');
-  src:  url('#{$icomoon-font-path}/austinp.eot?eoe6d#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/austinp.ttf?eoe6d') format('truetype'),
-    url('#{$icomoon-font-path}/austinp.woff?eoe6d') format('woff'),
-    url('#{$icomoon-font-path}/austinp.svg?eoe6d#austinp') format('svg');
+  src:  url('#{$icomoon-font-path}/austinp.eot?grvocu');
+  src:  url('#{$icomoon-font-path}/austinp.eot?grvocu#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/austinp.ttf?grvocu') format('truetype'),
+    url('#{$icomoon-font-path}/austinp.woff?grvocu') format('woff'),
+    url('#{$icomoon-font-path}/austinp.svg?grvocu#austinp') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
 }
 
 .icon-filmhub {
-  font-size: 1.5em;
+  font-size: 1.6em;
   &:before {
     content: $icon-filmhub;
   }
@@ -44,3 +44,9 @@
     content: $icon-nfx;
   }
 }
+.icon-opto22 {
+  &:before {
+    content: $icon-opto22; 
+  }
+}
+
