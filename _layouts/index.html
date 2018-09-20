@@ -21,8 +21,6 @@
 
 	  gtag('config', 'UA-112276509-1');
 	</script>
-
-
 </head>
 
 <body data-spy="scroll" data-offset="51">
@@ -115,10 +113,237 @@
 				</div>
 			</div>
 		</div>
+
+		<div style="background-color: white; margin-top: 50px;">
+			<form id="foo">
+			    <label for="bar">Name</label>
+			    <input id="bar" name="name" type="text" value="" />
+
+			    <label for="bar">Number of Guests</label>
+			    <input id="bar" name="guestNumber" type="text" value="" />
+
+			    <label for="bar">Comments</label>
+			    <input id="bar" name="comment" type="text" value="" />
+
+			    <input type="submit" value="Send" />
+			</form>
+		</div>
+
 		{% include _footer.html %}
 	</div>
 <canvas id="background-image"></canvas>
 {% include _js.html %}
+
+<script>
+
+	// Variable to hold request
+var request;
+
+// Bind to the submit event of our form
+$("#foo").submit(function(event){
+
+    // Prevent default posting of form - put here to work in case of errors
+    event.preventDefault();
+
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+
+    // Let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+
+    // Fire off the request to /form.php
+    request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbwsvL22-vP8qMUCSOGSSpB_PNqcvaIncgel-lFb7uOp9i9YjcsO/exec",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        console.log("Hooray, it worked!");
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+});
+
+</script>
+
+
+
+	<!-- <script>
+	var trainingURL = "https://training.opto22.com"
+
+	var request_series = $.get(trainingURL);
+
+	request_series.success(function(response) {
+		var seriesURL = [];
+		var courseURL = [];
+
+		var results = $("<body>").html(response).find("a.coursebox-container.course.sj-course-series")
+
+		for (i=0;i <results.length; i++) {
+	  	if (results[i] != null || results[i] != undefined || results[i] != "") {
+	  		seriesURL.push(results[i].getAttribute("href"));
+	  	}
+	  };
+
+	  var coursePages = [];
+
+	 //  for (i=0;i < seriesURL.length; i++) {
+	 //  	courseURL.push($.get(trainingURL+seriesURL[i]));
+		// }
+		$.each(seriesURL, function(index, url){
+		    coursePages.push(
+		        $.get(trainingURL + url)
+		    );
+		});
+		// Can't pass a literal array, so use apply.
+		var courseURL = [];
+		for (i = 0; i < coursePages.length; i++) {
+			$.when.apply($, coursePages[i]).then(function(data){
+				debugger;
+	    	var courses = $("<body>").html(data).find("a.coursebox-container")
+	    	for (j=0; j < courses.length; j++) {
+	  			if (courses[j] != null || courses[j] != undefined || courses[j] != "") {
+	  				courseURL.push(courses[j].getAttribute("href"));
+	  			}
+	    	}
+			});
+		}
+		// Need to Test below:
+			    for (var k = 0; k < courseURL.length; k++) {
+						var url = courseURL[k].match(/([^\/]*)\/*$/)[1]
+						var urlparams = window.location.href.match(/([^\/]*)\/*$/)[1]
+					    if (url == urlparams) {
+					    	seriesURL.push(courseURL[k]);
+					    	var matchURL = true;
+					    }
+					}
+
+					if (window.location.pathname.indexOf('/series/') == -1 && ($('.sj-page-detail.sj-page-detail-course').length > 0 || $('.sj-page-curriculum').length > 0)) {
+					    if (matchURL == true) {
+					    	var str = seriesURL[0].lastIndexOf('/') + 1;
+
+					    	var baseURL = seriesURL[0].substring(0,str);
+
+					    	$('#header-left').prepend('<a href="'+ baseURL + '" class="back-to-catalog animated-button-pair animated-button-pair-stacked header-link"><i class="fa fa-arrow-left" aria-hidden="true"></i><span id="backToCatalogShortText">Back</span></a>');
+					    } else {
+					    	$('#header-left').prepend('<a href="/" class="back-to-catalog animated-button-pair animated-button-pair-stacked header-link"><i class="fa fa-arrow-left" aria-hidden="true"></i><span id="backToCatalogShortText">Back</span></a>');
+					    }
+					    
+					};
+	});
+
+
+
+
+
+
+
+
+
+
+	var checkURL = 
+[
+
+"/series/groov-epic-training-series/groov-epic-hardware-1",
+"/series/groov-epic-training-series/hardware-module-touchpad-and-health-status-leds",
+"/series/groov-epic-training-series/hardware-resetting-to-factory-defaults",
+"/series/groov-epic-training-series/maintenance-course",
+"/series/groov-epic-training-series/groov-manage-introduction",
+"/series/groov-epic-training-series/io-inspecting-groov-io-modules",
+"/series/groov-epic-training-series/io-io-unit-configuration-and-tools",
+"/series/groov-epic-training-series/control-engine-status-serial-devices-background-downloading",
+"/series/groov-epic-training-series/system-networking",
+"/series/groov-epic-training-series/system-time",
+"/series/groov-epic-training-series/system-display",
+"/series/groov-epic-training-series/system-files-coming-soon",
+"/series/groov-epic-training-series/system-license",
+"/series/groov-epic-training-series/system-shell",
+"/series/groov-epic-training-series/system-serial-devices",
+"/series/groov-epic-training-series/system-restart",
+"/series/groov-epic-training-series/pac-control-introduction",
+"/series/groov-epic-training-series/pac-control-building-a-strategy-1",
+"/series/groov-epic-training-series/pac-control-debugging",
+"/series/groov-epic-training-series/groov-101",
+"/series/groov-epic-training-series/node-red-launch-the-editor-view-status-manage-project",
+"/series/groov-epic-training-series/intro-to-node-red",
+"/series/groov-epic-training-series/node-red-and-groov",
+"/series/groov-epic-training-series/ignition-edge-groov-workshops",
+"/series/groov-epic-training-series/sparkplug-configure-the-mqtt-broker-edge-node-and-controller",
+"/series/groov-epic-training-series/sparkplug-status-view-for-sparkplug-and-the-control-engine",
+"/series/groov-epic-training-series/maintenance-backup-restore-update-1",
+"/series/groov-epic-training-series/info-and-help-status-and-logs",
+"/series/groov-epic-training-series/accounts-managing-user-accounts",
+"/series/groov-epic-training-series/current-user-password-and-sign-out",
+"/series/groov-epic-training-series/downloading-and-running-custom-programs",
+
+"/series/snap-pac-system-training-series/snap-pac-training-coming-soon",
+"/series/snap-pac-system-training-series/pac-control-introduction",
+"/series/snap-pac-system-training-series/pac-control-building-a-strategy-1",
+"/series/snap-pac-system-training-series/pac-control-debugging",
+"/series/snap-pac-system-training-series/automation-101",
+
+"/series/groov-edge-appliance-training-series/groov-view",
+
+"/series/certification/opto-22-certification-courses-coming-soon",
+"/series/certification/snap-pac-certification-coming-soon",
+"/series/certification/groov-edge-appliance-certification-coming-soon"
+
+];
+var seriesURL = [];
+
+for (var i = 0; i < checkURL.length; i++) {
+	var url = checkURL[i].match(/([^\/]*)\/*$/)[1]
+	var urlparams = window.location.href.match(/([^\/]*)\/*$/)[1]
+    if (url == urlparams) {
+    	seriesURL.push(checkURL[i]);
+    	var matchURL = true;
+    }
+}
+
+if (window.location.pathname.indexOf('/series/') == -1 && ($('.sj-page-detail.sj-page-detail-course').length > 0 || $('.sj-page-curriculum').length > 0)) {
+    if (matchURL == true) {
+    	var str = seriesURL[0].lastIndexOf('/') + 1;
+
+    	var baseURL = seriesURL[0].substring(0,str);
+
+    	$('#header-left').prepend('<a href="'+ baseURL + '" class="back-to-catalog animated-button-pair animated-button-pair-stacked header-link"><i class="fa fa-arrow-left" aria-hidden="true"></i><span id="backToCatalogShortText">Back</span></a>');
+    } else {
+    	$('#header-left').prepend('<a href="/" class="back-to-catalog animated-button-pair animated-button-pair-stacked header-link"><i class="fa fa-arrow-left" aria-hidden="true"></i><span id="backToCatalogShortText">Back</span></a>');
+    }
+    
+};
+
+</script> -->
 
 </body>
 </html>
