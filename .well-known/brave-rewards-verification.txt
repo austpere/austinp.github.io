@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: austinp.com 
+Token: 5a795186b16a78e3f982602c0a100336ed215fb200bfaa411ae24ce659542ba4
