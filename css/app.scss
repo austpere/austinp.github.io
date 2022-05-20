@@ -124,13 +124,11 @@ a {
   &.icon-opto22:hover {
     color: #C52F2E;
   }
-  &.icon-amazon_logo:hover {
-    &.path1 {
-      color: rgb(255, 153, 0);
-    }
-    &.path2 {
-      color: rgb(33, 31, 31);
-    }
+  &.icon-amazon_logo:hover .path1 {
+    color: rgb(255, 153, 0);
+  }
+  &.icon-amazon_logo:hover .path2 {
+    color: rgb(33, 31, 31);
   }
 }
 
