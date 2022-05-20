@@ -61,5 +61,10 @@
             canvasImage.element.setAttribute('data-image', url);
         };
         image.src = url;
+
+        // Update Years of Experience.
+        var current_year = new Date().getFullYear();
+        var years_experience = current_year - 2014
+        $("#years_experience").text(years_experience);
     };
 </script>

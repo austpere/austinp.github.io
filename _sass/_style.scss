@@ -28,16 +28,16 @@
 }
 
 .icon-amazon_logo .path1 {
+  font-size: 2em;
   &:before {
-    content: $icon-amazon_logo-path1;  
-    color: rgb(255, 153, 0);
+    content: $icon-amazon_logo-path1;
   }
 }
 .icon-amazon_logo .path2 {
+  font-size: 2em;
   &:before {
     content: $icon-amazon_logo-path2;  
-    margin-left: -3.3134765625em;  
-    color: rgb(33, 31, 31);
+    margin-left: -4.7134765625em;
   }
 }
 
